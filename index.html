@@ -1,711 +1,336 @@
 <!DOCTYPE html>
-<html lang="en" class="light">
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Muhammad Muzammil Khan | Backend Developer</title>
-  <meta name="description"
-    content="Backend developer specializing in PHP, Laravel, SQL, and ASP.NET. Portfolio showcasing projects and skills.">
-  <meta property="og:image" content="https://muzammil-khan-cv.vercel.app/assets/img/og-image.png">
-
-  <!-- Favicon -->
-  <link href="assets/img/DSC_6126-removebg.png" rel="icon" type="image/png">
-
-  <!-- Tailwind CSS -->
+  <title>Muzammil Khan | Backend Developer @ TechyPros</title>
+  <link href="assets/img/DSC_6126-removebg.png" rel="icon">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            primary: '#3a86ff',
-            dark: '#191923FF',
-          },
-          fontFamily: {
-            sans: ['Poppins', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-
-  <!-- Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
-
-  <!-- AOS Animation -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <!-- SweetAlert -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script>emailjs.init('ZMpzFmMBzh2I5M2ye');</script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; scroll-behavior: smooth; }
+    body { background: #fafafa; color: #1a1a1a; }
+    .dark body { background: #0f0f0f; color: #fafafa; }
+    .card { background: white; border: 1px solid #e5e5e5; border-radius: 16px; transition: all 0.3s; }
+    .dark .card { background: #1a1a1a; border-color: #2a2a2a; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.08); border-color: #10b981; }
+    .dark .card:hover { box-shadow: 0 12px 24px rgba(16,185,129,0.15); }
+    .gradient-text { background: linear-gradient(135deg, #10b981, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .btn-primary { background: linear-gradient(135deg, #10b981, #06b6d4); color: white; padding: 14px 32px; border-radius: 12px; font-weight: 600; transition: all 0.3s; display: inline-block; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 16px rgba(16,185,129,0.3); }
+    .btn-outline { border: 2px solid #10b981; color: #10b981; padding: 12px 32px; border-radius: 12px; font-weight: 600; transition: all 0.3s; display: inline-block; }
+    .btn-outline:hover { background: #10b981; color: white; }
+    .section-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; }
+    @media (max-width: 768px) { .section-title { font-size: 2rem; } }
+  </style>
 </head>
+<body>
 
-<body class="bg-gray-50 dark:bg-dark transition-colors duration-300">
-  <!-- Dark Mode Toggle -->
-  <button id="theme-toggle" class="fixed top-4 right-4 z-50 p-2 rounded-full bg-white/80 dark:bg-dark/80 shadow-lg">
-    <i class="ri-sun-line dark:hidden"></i>
-    <i class="ri-moon-line hidden dark:block"></i>
-  </button>
-
-  <!-- Header -->
-  <header class="fixed left-0 top-0 h-full w-20 flex items-center z-40">
-    <nav class="navmenu bg-white/10 dark:bg-dark/10 backdrop-blur-md rounded-r-xl p-4">
-      <ul class="space-y-6">
-        <li><a href="#hero" class="flex flex-col items-center p-2 text-primary dark:text-white"><i
-              class="ri-home-4-line text-xl"></i><span class="text-xs mt-1">Home</span></a></li>
-        <li><a href="#about"
-            class="flex flex-col items-center p-2 text-gray-600 dark:text-gray-300 hover:text-primary"><i
-              class="ri-user-line text-xl"></i><span class="text-xs mt-1">About</span></a></li>
-        <li><a href="#resume"
-            class="flex flex-col items-center p-2 text-gray-600 dark:text-gray-300 hover:text-primary"><i
-              class="ri-file-text-line text-xl"></i><span class="text-xs mt-1">Resume</span></a></li>
-        <li><a href="#skills"
-            class="flex flex-col items-center p-2 text-gray-600 dark:text-gray-300 hover:text-primary"><i
-              class="ri-code-line text-xl"></i><span class="text-xs mt-1">Skills</span></a></li>
-        <li><a href="#services"
-            class="flex flex-col items-center p-2 text-gray-600 dark:text-gray-300 hover:text-primary"><i
-              class="ri-code-box-line text-xl"></i><span class="text-xs mt-1">Services</span></a></li>
-        <li><a href="#contact"
-            class="flex flex-col items-center p-2 text-gray-600 dark:text-gray-300 hover:text-primary"><i
-              class="ri-mail-line text-xl"></i><span class="text-xs mt-1">Contact</span></a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main class="ml-20">
-    <!-- Hero Section -->
-    <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent z-0"></div>
-      <img src="assets/img/DSC_6129-removebg.png" alt="Muzammil Khan"
-        class="absolute right-0 bottom-0 h-[90vh] z-0 opacity-80">
-
-      <div class="container relative z-10 text-center" data-aos="fade-up">
-        <h1 class="text-5xl md:text-7xl font-bold text-dark dark:text-white mb-4">Muzammil Khan</h1>
-        <div class="text-2xl md:text-4xl text-gray-600 dark:text-gray-300 mb-8">
-          I'm <span class="text-primary font-medium" id="typed"></span>
-        </div>
-        <div class="flex justify-center space-x-4">
-          <a href="https://linkedin.com/in/muzammil-khan-9b4738267" target="_blank"
-            class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary/90 transition">
-            <i class="ri-linkedin-box-fill text-2xl"></i>
-          </a>
-          <a href="https://github.com/muzammilkhan1997" target="_blank"
-            class="w-12 h-12 rounded-full bg-gray-800 text-white flex items-center justify-center hover:bg-gray-700 transition">
-            <i class="ri-github-fill text-2xl"></i>
-          </a>
-        </div>
+  <nav class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold gradient-text">Muzammil Khan</a>
+      <div class="hidden md:flex gap-8">
+        <a href="#home" class="text-sm font-medium hover:text-emerald-500 transition">Home</a>
+        <a href="#about" class="text-sm font-medium hover:text-emerald-500 transition">About</a>
+        <a href="#services" class="text-sm font-medium hover:text-emerald-500 transition">Services</a>
+        <a href="#portfolio" class="text-sm font-medium hover:text-emerald-500 transition">Portfolio</a>
+        <a href="#contact" class="text-sm font-medium hover:text-emerald-500 transition">Contact</a>
       </div>
-    </section>
+      <a href="#contact" class="hidden md:block px-6 py-2 bg-emerald-500 text-white rounded-lg text-sm font-semibold hover:bg-emerald-600 transition">Hire Me</a>
+    </div>
+  </nav>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white dark:bg-gray-900">
-      <div class="container">
-        <h2 class="text-3xl font-bold text-center mb-12 text-dark dark:text-white">About Me</h2>
-
-        <div class="flex flex-col lg:flex-row items-center gap-12">
-          <div class="lg:w-1/3 flex justify-center">
-            <div class="relative">
-              <img src="assets/img/DSC_6126-removebg.png" alt="Muzammil Khan"
-                class="w-64 h-64 object-contain opacity-80">
-              <div class="absolute inset-0 border-4 border-primary/30 rounded-full animate-pulse"></div>
-            </div>
+  <section id="home" class="min-h-screen flex items-center px-6 pt-20">
+    <div class="max-w-7xl mx-auto w-full">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="inline-block px-4 py-2 bg-emerald-50 text-emerald-600 rounded-full text-sm font-semibold mb-6">Backend Developer @ TechyPros</div>
+          <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            Building Custom<br><span class="gradient-text">Backend Solutions</span>
+          </h1>
+          <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+            Specialized in WordPress to Custom Code Migration, Custom Plugin Development, and scalable backend systems using PHP, Laravel, and ASP.NET.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="#contact" class="btn-primary">Get In Touch</a>
+            <a href="assets/img/Muzammilkhan.pdf" download class="btn-outline">Download Resume</a>
           </div>
-
-          <div class="lg:w-2/3">
-            <h3 class="text-2xl font-semibold mb-4 text-dark dark:text-white">Web & Backend Developer</h3>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              <ul class="space-y-2">
-                <li class="flex items-center">
-                  <i class="ri-calendar-line text-primary mr-2"></i>
-                  <strong class="w-24 text-dark dark:text-white">Birthday:</strong> <span class="text-dark dark:text-white">7 May 2001</span>
-                </li>
-                <li class="flex items-center">
-                  <i class="ri-global-line text-primary mr-2"></i>
-                  <strong class="w-24 text-dark dark:text-white">Website:</strong>
-                  <a href="https://muzammil-khan-cv.vercel.app/"
-                    class="text-primary hover:underline">muzammil-khan-cv.vercel.app</a>
-                </li>
-                <!-- <li class="flex items-center">
-                  <i class="ri-phone-line text-primary mr-2"></i>
-                  <strong class="w-24">Phone:</strong> <span>+923 161 128101</span>
-                </li> -->
-                <!-- addto automate dialing number -->
-                <li class="flex items-center">
-                  <i class="ri-phone-line text-primary mr-2"></i>
-                  <strong class="w-24 text-dark dark:text-white">Phone:</strong>
-                  <a href="tel:+923161128101" class="text-primary hover:underline">+923161128101</a>
-                </li>
-                <li class="flex items-center">
-                  <i class="ri-map-pin-line text-primary mr-2"></i>
-                  <strong class="w-24 text-dark dark:text-white">City:</strong> <span
-                    class="text-dark dark:text-white">Karachi, Pakistan</span>
-                </li>
-              </ul>
-
-              <ul class="space-y-2">
-                <li class="flex items-center">
-                  <i class="ri-user-line text-primary mr-2"></i>
-                  <strong class="w-24 text-dark dark:text-white ">Age:</strong> <span
-                    class="text-dark dark:text-white">24</span>
-                </li>
-                <li class="flex items-center">
-                  <i class="ri-graduation-cap-line text-primary mr-2"></i>
-                  <strong class="w-24 text-dark dark:text-white">Degree:</strong> <span class="
-                    dark:text-white">Associate Degree in Science (in progress)</span>
-                </li>
-                <li class="flex items-center">
-                  <i class="ri-medal-line text-primary mr-2 "></i>
-                  <strong class="w-24 text-dark dark:text-white">Diploma:</strong> <span
-                    class="text-dark dark:text-white">Software Engineer From Aptech (in progress)</span>
-                </li>
-                <li class="flex items-center">
-                  <i class="ri-mail-line text-primary mr-2"></i>
-                  <strong class="w-24 text-dark dark:text-white">Email:</strong>
-                  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=muzammilkhan20010407@gmail.com"
-                    class="text-primary hover:underline">muzammilkhan20010407@gmail.com</a>
-                </li>
-              </ul>
-            </div>
-
-            <p class="text-gray-600 dark:text-gray-300 mb-6">
-              Backend developer with expertise in PHP, Laravel, and SQL. Currently pursuing a Associate Degree in
-              Science while completing a diploma in Software Engineer. Passionate about creating efficient, scalable
-              systems with clean code.
-            </p>
-
-            <a href="assets/img/Muzammilkhan.pdf" download
-              class="inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition">
-              <i class="ri-download-line mr-2"></i> Download Resume
+          <div class="flex gap-4 mt-8">
+            <a href="https://linkedin.com/in/muzammil-khan-9b4738267" target="_blank" class="w-12 h-12 flex items-center justify-center border border-gray-300 rounded-full hover:border-emerald-500 hover:text-emerald-500 transition">
+              <i class="ri-linkedin-fill text-xl"></i>
+            </a>
+            <a href="https://github.com/muzammilkhan1997" target="_blank" class="w-12 h-12 flex items-center justify-center border border-gray-300 rounded-full hover:border-emerald-500 hover:text-emerald-500 transition">
+              <i class="ri-github-fill text-xl"></i>
             </a>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-gray-50 dark:bg-gray-800">
-      <div class="container">
-        <h2 class="text-3xl font-bold text-center mb-12 text-dark dark:text-white">Technical Skills</h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <!-- Left Column -->
-          <div class="space-y-6">
-            <div>
-              <div class="flex justify-between mb-2">
-                <span class="font-medium text-dark dark:text-white">HTML</span>
-                <span class="text-primary">100%</span>
-              </div>
-              <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-                <div class="bg-primary h-2.5 rounded-full" style="width: 100%"></div>
-              </div>
-            </div>
-
-            <div>
-              <div class="flex justify-between mb-2">
-                <span class="font-medium text-dark dark:text-white">CSS</span>
-                <span class="text-primary">90%</span>
-              </div>
-              <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-                <div class="bg-primary h-2.5 rounded-full" style="width: 90%"></div>
-              </div>
-            </div>
-
-            <div>
-              <div class="flex justify-between mb-2">
-                <span class="font-medium text-dark dark:text-white">JavaScript</span>
-                <span class="text-primary">75%</span>
-              </div>
-              <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-                <div class="bg-primary h-2.5 rounded-full" style="width: 75%"></div>
-              </div>
-            </div>
-
-            <div>
-              <div class="flex justify-between mb-2">
-                <span class="font-medium text-dark dark:text-white">SQL Server</span>
-                <span class="text-primary">90%</span>
-              </div>
-              <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-                <div class="bg-primary h-2.5 rounded-full" style="width: 90%"></div>
-              </div>
-            </div>
-
-            <div>
-              <div class="flex justify-between mb-2">
-                <span class="font-medium text-dark dark:text-white">Flutter</span>
-                <span class="text-primary">65%</span>
-              </div>
-              <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-                <div class="bg-primary h-2.5 rounded-full" style="width: 65%"></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Column -->
-          <div class="space-y-6">
-            <div>
-              <div class="flex justify-between mb-2">
-                <span class="font-medium text-dark dark:text-white">PHP</span>
-                <span class="text-primary">85%</span>
-              </div>
-              <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-                <div class="bg-primary h-2.5 rounded-full" style="width: 85%"></div>
-              </div>
-            </div>
-
-            <div>
-              <div class="flex justify-between mb-2">
-                <span class="font-medium text-dark dark:text-white">Laravel</span>
-                <span class="text-primary">75%</span>
-              </div>
-              <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-                <div class="bg-primary h-2.5 rounded-full" style="width: 75%"></div>
-              </div>
-            </div>
-
-            <div>
-              <div class="flex justify-between mb-2">
-                <span class="font-medium text-dark dark:text-white">ASP.NET MVC</span>
-                <span class="text-primary">80%</span>
-              </div>
-              <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-                <div class="bg-primary h-2.5 rounded-full" style="width: 80%"></div>
-              </div>
-            </div>
-
-            <div>
-              <div class="flex justify-between mb-2">
-                <span class="font-medium text-dark dark:text-white">WordPress</span>
-                <span class="text-primary">75%</span>
-              </div>
-              <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-                <div class="bg-primary h-2.5 rounded-full" style="width: 75%"></div>
-              </div>
-            </div>
-
-            <div>
-              <div class="flex justify-between mb-2">
-                <span class="font-medium text-dark dark:text-white">Angular</span>
-                <span class="text-primary">60%</span>
-              </div>
-              <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-                <div class="bg-primary h-2.5 rounded-full" style="width: 60%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tech Stack Icons -->
-        <div class="mt-16 flex flex-wrap justify-center gap-6">
-          <div class="tech-icon" title="HTML5">
-            <i class="ri-html5-fill text-4xl text-orange-500"></i>
-          </div>
-          <div class="tech-icon" title="CSS3">
-            <i class="ri-css3-fill text-4xl text-blue-500"></i>
-          </div>
-          <div class="tech-icon" title="JavaScript">
-            <i class="ri-javascript-fill text-4xl text-yellow-400"></i>
-          </div>
-          <div class="tech-icon" title="PHP">
-            <i class="ri-code-box-line text-4xl text-purple-500"></i>
-          </div>
-          <div class="tech-icon" title="Laravel">
-            <i class="ri-code-box-line text-4xl text-red-500"></i>
-          </div>
-          <div class="tech-icon" title="SQL">
-            <i class="ri-database-2-line text-4xl text-blue-400"></i>
-          </div>
-          <div class="tech-icon" title="Flutter">
-            <i class="ri-smartphone-line text-4xl text-blue-300"></i>
-          </div>
-          <div class="tech-icon" title="Angular">
-            <i class="ri-angularjs-line text-4xl text-red-400"></i>
-          </div>
-          <div class="tech-icon" title="ASP.NET">
-            <i class="ri-windows-fill text-4xl text-blue-600"></i>
-          </div>
-          <div class="tech-icon" title="WordPress">
-            <i class="ri-wordpress-fill text-4xl text-blue-700"></i>
-          </div>
+        <div class="relative">
+          <div class="absolute inset-0 bg-gradient-to-br from-emerald-100 to-cyan-100 rounded-3xl transform rotate-6"></div>
+          <img src="assets/img/DSC_6126-removebg.png" alt="Muzammil Khan" class="relative w-full max-w-md mx-auto rounded-3xl">
         </div>
       </div>
-    </section>
-
-    <!-- Resume Section -->
-    <section id="resume" class="py-20 bg-white dark:bg-gray-900">
-      <div class="container">
-        <h2 class="text-3xl font-bold text-center mb-12 text-dark dark:text-white">Resume</h2>
-
-        <div class="flex flex-col lg:flex-row gap-12">
-          <!-- Left Column -->
-          <div class="lg:w-1/2">
-            <h3 class="text-2xl font-semibold mb-6 text-dark dark:text-white border-b pb-2">Education</h3>
-
-            <div class="space-y-8">
-              <div class="resume-item" data-aos="fade-up">
-                <h4 class="text-xl font-medium text-dark dark:text-white">B.SC in Zoology</h4>
-                <div class="text-primary mb-2">In Progress</div>
-                <p class="text-gray-600 dark:text-gray-300"><em>Jinnah College for Men</em></p>
-              </div>
-
-              <div class="resume-item" data-aos="fade-up" data-aos-delay="100">
-                <h4 class="text-xl font-medium text-dark dark:text-white">Diploma in Web Designing</h4>
-                <div class="text-primary mb-2">In Progress</div>
-                <p class="text-gray-600 dark:text-gray-300"><em>Aptech Learning</em></p>
-              </div>
-
-              <div class="resume-item" data-aos="fade-up" data-aos-delay="200">
-                <h4 class="text-xl font-medium text-dark dark:text-white">Intermediate</h4>
-                <div class="text-primary mb-2">2020 - 2021</div>
-                <p class="text-gray-600 dark:text-gray-300"><em>Govt. Degree Boys College Buffer Zone Karachi</em></p>
-              </div>
-
-              <div class="resume-item" data-aos="fade-up" data-aos-delay="300">
-                <h4 class="text-xl font-medium text-dark dark:text-white">Matriculation</h4>
-                <div class="text-primary mb-2">2018 - 2019</div>
-                <p class="text-gray-600 dark:text-gray-300"><em>Kalyana Academy Secondary School</em></p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Column -->
-          <div class="lg:w-1/2">
-            <h3 class="text-2xl font-semibold mb-6 text-dark dark:text-white border-b pb-2">Professional Skills</h3>
-
-            <div class="space-y-8">
-              <div class="resume-item" data-aos="fade-up">
-                <h4 class="text-xl font-medium text-dark dark:text-white">Backend Development</h4>
-                <p class="text-gray-600 dark:text-gray-300">
-                  Expertise in building server-side applications using PHP, Laravel, and ASP.NET MVC with clean,
-                  maintainable code.
-                </p>
-              </div>
-
-              <div class="resume-item" data-aos="fade-up" data-aos-delay="100">
-                <h4 class="text-xl font-medium text-dark dark:text-white">Database Management</h4>
-                <p class="text-gray-600 dark:text-gray-300">
-                  Proficient in designing and optimizing SQL Server and MySQL databases for performance and scalability.
-                </p>
-              </div>
-
-              <div class="resume-item" data-aos="fade-up" data-aos-delay="200">
-                <h4 class="text-xl font-medium text-dark dark:text-white">Web Development</h4>
-                <p class="text-gray-600 dark:text-gray-300">
-                  Skilled in creating responsive web applications with modern frontend technologies and robust backend
-                  systems.
-                </p>
-              </div>
-
-              <div class="resume-item" data-aos="fade-up" data-aos-delay="300">
-                <h4 class="text-xl font-medium text-dark dark:text-white">Problem Solving</h4>
-                <p class="text-gray-600 dark:text-gray-300">
-                  Strong analytical skills with ability to troubleshoot complex technical issues and implement effective
-                  solutions.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-gray-50 dark:bg-gray-800">
-      <div class="container">
-        <h2 class="text-3xl font-bold text-center mb-12 text-dark dark:text-white">Services</h2>
-        <p class="text-center max-w-3xl mx-auto text-gray-600 dark:text-gray-300 mb-16">
-          With expertise in backend development and database management, I offer tailored solutions to meet your
-          technical needs. My academic background ensures a disciplined approach to problem-solving.
-        </p>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Service 1 -->
-          <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow glass-card"
-            data-aos="fade-up">
-            <div class="text-primary mb-4">
-              <i class="ri-code-box-line text-4xl"></i>
-            </div>
-            <h3 class="text-xl font-semibold mb-3 text-dark dark:text-white">Backend Development</h3>
-            <p class="text-gray-600 dark:text-gray-300">
-              Building robust server-side applications using PHP, Laravel, and ASP.NET MVC with clean, maintainable
-              code.
-            </p>
-          </div>
-
-          <!-- Service 2 -->
-          <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow glass-card"
-            data-aos="fade-up" data-aos-delay="100">
-            <div class="text-primary mb-4">
-              <i class="ri-database-2-line text-4xl"></i>
-            </div>
-            <h3 class="text-xl font-semibold mb-3 text-dark dark:text-white">Database Management</h3>
-            <p class="text-gray-600 dark:text-gray-300">
-              Designing and optimizing SQL Server and MySQL databases for performance and scalability.
-            </p>
-          </div>
-
-          <!-- Service 3 -->
-          <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow glass-card"
-            data-aos="fade-up" data-aos-delay="200">
-            <div class="text-primary mb-4">
-              <i class="ri-window-line text-4xl"></i>
-            </div>
-            <h3 class="text-xl font-semibold mb-3 text-dark dark:text-white">Web Applications</h3>
-            <p class="text-gray-600 dark:text-gray-300">
-              Developing full-featured web applications with responsive frontends and secure backends.
-            </p>
-          </div>
-
-          <!-- Service 4 -->
-          <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow glass-card"
-            data-aos="fade-up" data-aos-delay="300">
-            <div class="text-primary mb-4">
-              <i class="ri-smartphone-line text-4xl"></i>
-            </div>
-            <h3 class="text-xl font-semibold mb-3 text-dark dark:text-white">Mobile Development</h3>
-            <p class="text-gray-600 dark:text-gray-300">
-              Creating cross-platform mobile applications using Flutter framework.
-            </p>
-          </div>
-
-          <!-- Service 5 -->
-          <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow glass-card"
-            data-aos="fade-up" data-aos-delay="400">
-            <div class="text-primary mb-4">
-              <i class="ri-wordpress-fill text-4xl"></i>
-            </div>
-            <h3 class="text-xl font-semibold mb-3 text-dark dark:text-white">WordPress Development</h3>
-            <p class="text-gray-600 dark:text-gray-300">
-              Building custom WordPress themes and plugins for content management needs.
-            </p>
-          </div>
-
-          <!-- Service 6 -->
-          <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow glass-card"
-            data-aos="fade-up" data-aos-delay="500">
-            <div class="text-primary mb-4">
-              <i class="ri-bug-line text-4xl"></i>
-            </div>
-            <h3 class="text-xl font-semibold mb-3 text-dark dark:text-white">Debugging & Optimization</h3>
-            <p class="text-gray-600 dark:text-gray-300">
-              Identifying and fixing performance bottlenecks and bugs in existing applications.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white dark:bg-gray-900">
-      <div class="container">
-        <h2 class="text-3xl font-bold text-center mb-12 text-dark dark:text-white">Get In Touch</h2>
-
-        <div class="flex flex-col lg:flex-row gap-12">
-          <!-- Contact Info -->
-          <div class="lg:w-1/3 space-y-6">
-            <div class="flex items-start">
-              <div class="bg-primary/10 text-primary p-3 rounded-lg mr-4">
-                <i class="ri-map-pin-line text-2xl"></i>
-              </div>
-              <div>
-                <h3 class="text-lg font-medium text-dark dark:text-white mb-1">Location</h3>
-                <p class="text-gray-600 dark:text-gray-300">Karachi, Pakistan</p>
-              </div>
-            </div>
-
-            <div class="flex items-start">
-              <div class="bg-primary/10 text-primary p-3 rounded-lg mr-4">
-                <i class="ri-mail-line text-2xl"></i>
-              </div>
-              <div>
-                <h3 class="text-lg font-medium text-dark dark:text-white mb-1">Email</h3>
-                <p herf="maihttps://mail.google.com/mail/?view=cm&fs=1&to=muzammilkhan20010407@gmail.com"
-                  class="text-gray-600 dark:text-gray-300">muzammilkhan20010407@gmail.com</p>
-              </div>
-            </div>
-
-            <div class="flex items-start">
-              <div class="bg-primary/10 text-primary p-3 rounded-lg mr-4">
-                <i class="ri-phone-line text-2xl"></i>
-              </div>
-              <div>
-                <h3 class="text-lg font-medium text-dark dark:text-white mb-1">Call</h3>
-                <p class="text-gray-600 dark:text-gray-300">+923 161 128101</p>
-              </div>
-            </div>
-
-            <div class="flex items-start">
-              <div class="bg-primary/10 text-primary p-3 rounded-lg mr-4">
-                <i class="ri-time-line text-2xl"></i>
-              </div>
-              <div>
-                <h3 class="text-lg font-medium text-dark dark:text-white mb-1">Availability</h3>
-                <p class="text-gray-600 dark:text-gray-300">Monday - Friday: 9am - 5pm</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Contact Form -->
-          <div class="lg:w-2/3">
-            <form id="contact-form" class="space-y-6">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label for="name" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Your
-                    Name</label>
-                  <input type="text" id="from_name" name="name"
-                    class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-primary focus:border-primary dark:bg-gray-800 dark:text-white"
-                    required>
-                </div>
-                <div>
-                  <label for="email" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Your
-                    Email</label>
-                  <input type="email" id="email_id" name="email"
-                    class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-primary focus:border-primary dark:bg-gray-800 dark:text-white"
-                    required>
-                </div>
-              </div>
-
-              <div>
-                <label for="subject"
-                  class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Subject</label>
-                <input type="text" id="subject_name" name="subject"
-                  class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-primary focus:border-primary dark:bg-gray-800 dark:text-white"
-                  required>
-              </div>
-
-              <div>
-                <label for="message"
-                  class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
-                <textarea id="message" name="message" rows="6"
-                  class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-primary focus:border-primary dark:bg-gray-800 dark:text-white"
-                  required></textarea>
-              </div>
-
-              <button type="submit"
-                class="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition w-full md:w-auto">
-                Send Message
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="py-8 bg-gray-50 dark:bg-gray-800 text-center">
-    <div class="container">
-      <h3 class="text-2xl font-bold mb-4 text-dark dark:text-white">Muzammil Khan</h3>
-
-      <div class="flex justify-center space-x-4 mb-6">
-        <a href="https://linkedin.com/in/muzammil-khan-9b4738267" target="_blank"
-          class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-white flex items-center justify-center hover:bg-primary hover:text-white transition">
-          <i class="ri-linkedin-box-fill text-xl"></i>
-        </a>
-        <a href="https://github.com/muzammilkhan1997" target="_blank"
-          class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-white flex items-center justify-center hover:bg-gray-800 hover:text-white transition">
-          <i class="ri-github-fill text-xl"></i>
-        </a>
-        <a href="#"
-          class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-white flex items-center justify-center hover:bg-blue-500 hover:text-white transition">
-          <i class="ri-twitter-fill text-xl"></i>
-        </a>
-        <a href="#"
-          class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-white flex items-center justify-center hover:bg-pink-500 hover:text-white transition">
-          <i class="ri-instagram-line text-xl"></i>
-        </a>
-      </div>
-
-      <p class="text-gray-600 dark:text-gray-300">
-        © <span id="year"></span> Muhammad Muzammil Khan. All rights reserved.
-      </p>
     </div>
+  </section>
+
+  <section id="about" class="py-24 px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="section-title">About Me</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Backend Developer with expertise in custom solutions and WordPress development</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="card p-8 text-center">
+          <div class="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <i class="ri-code-box-line text-3xl text-emerald-600"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">3+ Years</h3>
+          <p class="text-gray-600 text-sm">Professional Experience</p>
+        </div>
+        <div class="card p-8 text-center">
+          <div class="w-16 h-16 bg-cyan-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <i class="ri-briefcase-line text-3xl text-cyan-600"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">50+ Projects</h3>
+          <p class="text-gray-600 text-sm">Successfully Delivered</p>
+        </div>
+        <div class="card p-8 text-center">
+          <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <i class="ri-star-line text-3xl text-blue-600"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">100% Satisfaction</h3>
+          <p class="text-gray-600 text-sm">Client Satisfaction Rate</p>
+        </div>
+      </div>
+
+      <div class="mt-16 card p-8 md:p-12">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="text-2xl font-bold mb-4">Backend Developer @ TechyPros</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              I specialize in converting WordPress websites to custom-coded solutions, developing custom WordPress plugins, and building robust backend systems. With expertise in PHP, Laravel, and ASP.NET, I deliver scalable, high-performance applications.
+            </p>
+            <div class="space-y-3">
+              <div class="flex items-center gap-3">
+                <i class="ri-map-pin-line text-emerald-500"></i>
+                <span class="text-sm">Karachi, Pakistan</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <i class="ri-mail-line text-emerald-500"></i>
+                <a href="mailto:muzammilkhan20010407@gmail.com" class="text-sm hover:text-emerald-500">muzammilkhan20010407@gmail.com</a>
+              </div>
+              <div class="flex items-center gap-3">
+                <i class="ri-phone-line text-emerald-500"></i>
+                <a href="tel:+923161128101" class="text-sm hover:text-emerald-500">+92 316 1128101</a>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="p-4 bg-gray-50 rounded-xl">
+              <p class="text-xs text-gray-500 mb-1">Birthday</p>
+              <p class="font-semibold">7 May 2001</p>
+            </div>
+            <div class="p-4 bg-gray-50 rounded-xl">
+              <p class="text-xs text-gray-500 mb-1">Age</p>
+              <p class="font-semibold">24 Years</p>
+            </div>
+            <div class="p-4 bg-gray-50 rounded-xl">
+              <p class="text-xs text-gray-500 mb-1">Company</p>
+              <p class="font-semibold">TechyPros</p>
+            </div>
+            <div class="p-4 bg-gray-50 rounded-xl">
+              <p class="text-xs text-gray-500 mb-1">Position</p>
+              <p class="font-semibold">Backend Dev</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="section-title">Services</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Comprehensive backend development and custom solutions</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="card p-8">
+          <div class="w-14 h-14 bg-gradient-to-br from-emerald-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6">
+            <i class="ri-wordpress-line text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">WordPress to Custom</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Expert migration from WordPress to custom-coded websites with improved performance, security, and scalability.
+          </p>
+        </div>
+
+        <div class="card p-8">
+          <div class="w-14 h-14 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center mb-6">
+            <i class="ri-plug-line text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Custom Plugin Development</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Creating custom WordPress plugins tailored to your specific business needs with clean, maintainable code.
+          </p>
+        </div>
+
+        <div class="card p-8">
+          <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-2xl flex items-center justify-center mb-6">
+            <i class="ri-code-s-slash-line text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Custom Code Solutions</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Developing custom code solutions from scratch using PHP, Laravel, and ASP.NET for unique requirements.
+          </p>
+        </div>
+
+        <div class="card p-8">
+          <div class="w-14 h-14 bg-gradient-to-br from-emerald-500 to-blue-500 rounded-2xl flex items-center justify-center mb-6">
+            <i class="ri-database-2-line text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Database Design</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Designing and optimizing SQL Server and MySQL databases for high-performance applications.
+          </p>
+        </div>
+
+        <div class="card p-8">
+          <div class="w-14 h-14 bg-gradient-to-br from-cyan-500 to-emerald-500 rounded-2xl flex items-center justify-center mb-6">
+            <i class="ri-server-line text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">API Development</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Building robust RESTful APIs and server-side applications with clean architecture and documentation.
+          </p>
+        </div>
+
+        <div class="card p-8">
+          <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6">
+            <i class="ri-speed-line text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Performance Optimization</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Optimizing website speed, database queries, and server performance for better user experience.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" class="py-24 px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="section-title">Portfolio</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Recent projects and custom solutions</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="card overflow-hidden">
+          <div class="h-48 bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center">
+            <i class="ri-shopping-cart-line text-6xl text-white/20"></i>
+          </div>
+          <div class="p-6">
+            <div class="text-xs font-semibold text-emerald-600 mb-2">WordPress → Custom</div>
+            <h3 class="text-lg font-bold mb-2">E-Commerce Platform</h3>
+            <p class="text-sm text-gray-600 mb-4">Migrated WooCommerce to custom Laravel with 60% performance boost</p>
+            <div class="flex gap-2">
+              <span class="px-3 py-1 bg-gray-100 rounded-full text-xs">Laravel</span>
+              <span class="px-3 py-1 bg-gray-100 rounded-full text-xs">MySQL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card overflow-hidden">
+          <div class="h-48 bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center">
+            <i class="ri-building-line text-6xl text-white/20"></i>
+          </div>
+          <div class="p-6">
+            <div class="text-xs font-semibold text-cyan-600 mb-2">Custom Plugin</div>
+            <h3 class="text-lg font-bold mb-2">Business Portal Plugin</h3>
+            <p class="text-sm text-gray-600 mb-4">Custom WordPress plugin for enterprise client management</p>
+            <div class="flex gap-2">
+              <span class="px-3 py-1 bg-gray-100 rounded-full text-xs">WordPress</span>
+              <span class="px-3 py-1 bg-gray-100 rounded-full text-xs">PHP</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card overflow-hidden">
+          <div class="h-48 bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center">
+            <i class="ri-calendar-check-line text-6xl text-white/20"></i>
+          </div>
+          <div class="p-6">
+            <div class="text-xs font-semibold text-blue-600 mb-2">Custom Code</div>
+            <h3 class="text-lg font-bold mb-2">Booking System</h3>
+            <p class="text-sm text-gray-600 mb-4">Custom booking system built with Laravel and Vue.js</p>
+            <div class="flex gap-2">
+              <span class="px-3 py-1 bg-gray-100 rounded-full text-xs">Laravel</span>
+              <span class="px-3 py-1 bg-gray-100 rounded-full text-xs">Vue.js</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="py-24 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="section-title">Let's Work Together</h2>
+        <p class="text-gray-600">Get in touch directly via email or phone</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <a href="mailto:muzammilkhan20010407@gmail.com" class="card p-8 text-center group">
+          <div class="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-emerald-500 transition">
+            <i class="ri-mail-line text-3xl text-emerald-600 group-hover:text-white transition"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Email Me</h3>
+          <p class="text-sm text-gray-600 mb-4">Send me an email directly</p>
+          <p class="text-emerald-600 font-semibold break-all">muzammilkhan20010407@gmail.com</p>
+        </a>
+
+        <a href="tel:+923161128101" class="card p-8 text-center group">
+          <div class="w-16 h-16 bg-cyan-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-cyan-500 transition">
+            <i class="ri-phone-line text-3xl text-cyan-600 group-hover:text-white transition"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Call Me</h3>
+          <p class="text-sm text-gray-600 mb-4">Give me a call</p>
+          <p class="text-cyan-600 font-semibold">+92 316 1128101</p>
+        </a>
+      </div>
+
+      <div class="mt-12 card p-8 text-center">
+        <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <i class="ri-map-pin-line text-3xl text-blue-600"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-2">Location</h3>
+        <p class="text-gray-600">Karachi, Pakistan</p>
+      </div>
+
+      <div class="mt-12 text-center">
+        <p class="text-gray-600 mb-4">Connect with me on social media</p>
+        <div class="flex gap-4 justify-center">
+          <a href="https://linkedin.com/in/muzammil-khan-9b4738267" target="_blank" class="w-12 h-12 flex items-center justify-center border border-gray-300 rounded-full hover:border-emerald-500 hover:text-emerald-500 transition">
+            <i class="ri-linkedin-fill text-xl"></i>
+          </a>
+          <a href="https://github.com/muzammilkhan1997" target="_blank" class="w-12 h-12 flex items-center justify-center border border-gray-300 rounded-full hover:border-emerald-500 hover:text-emerald-500 transition">
+            <i class="ri-github-fill text-xl"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-8 px-6 border-t border-gray-200 text-center">
+    <p class="text-sm text-gray-600">© 2025 Muzammil Khan @ TechyPros. All rights reserved.</p>
   </footer>
 
-  <!-- Back to Top -->
-  <a href="#" id="back-to-top"
-    class="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center opacity-0 invisible transition-all hover:bg-primary/90">
-    <i class="ri-arrow-up-line text-xl"></i>
-  </a>
-
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
   <script>
-    // Initialize AOS
-    AOS.init({
-      duration: 800,
-      easing: 'ease-in-out',
-      once: true
-    });
-
-    // Typed.js initialization
-    const typed = new Typed('#typed', {
-      strings: ['Backend Developer', 'PHP Developer', 'SQL Specialist', 'Web Developer'],
-      typeSpeed: 50,
-      backSpeed: 30,
-      loop: true
-    });
-
-    // Dark mode toggle
-    const themeToggle = document.getElementById('theme-toggle');
-    themeToggle.addEventListener('click', () => {
-      document.documentElement.classList.toggle('dark');
-      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
-    });
-
-    // Set initial theme
-    if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark');
-    }
-
-    // Back to top button
-    const backToTop = document.getElementById('back-to-top');
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
-        backToTop.classList.remove('opacity-0', 'invisible');
-      } else {
-        backToTop.classList.add('opacity-0', 'invisible');
-      }
-    });
-
-    // Set current year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // EmailJS contact form
-    document.getElementById('contact-form').addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      const fromName = document.getElementById('from_name').value.trim();
-      const subjectName = document.getElementById('subject_name').value.trim();
-      const emailId = document.getElementById('email_id').value.trim();
-      const message = document.getElementById('message').value.trim();
-
-      if (!fromName || !subjectName || !emailId || !message) {
-        Swal.fire('Error', 'Please fill all fields', 'error');
-        return;
-      }
-
-      emailjs.send('service_3wcr3wo', 'template_dw2cpsf', {
-        from_name: fromName,
-        subject_name: subjectName,
-        email_id: emailId,
-        message: message
-      }).then(() => {
-        Swal.fire('Success', 'Your message has been sent!', 'success');
-        document.getElementById('contact-form').reset();
-      }, (error) => {
-        Swal.fire('Error', 'Failed to send message: ' + error.text, 'error');
-      });
-    });
+    // No form submission needed - using direct contact links
   </script>
 </body>
-
 </html>
